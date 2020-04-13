@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using NetProxy.Proxies;
+using NetProxy.Models;
 
 namespace NetProxy
 {
@@ -60,17 +62,5 @@ namespace NetProxy
             }
         }
     }
-
-    public class ProxyConfig
-    {
-        public string protocol { get; set; }
-        public ushort localPort { get; set; }
-        public string localIp { get; set; }
-        public string forwardIp { get; set; }
-        public ushort forwardPort { get; set; }
-    }
-    interface IProxy
-    {
-        Task Start(string remoteServerIp, ushort remoteServerPort, ushort localPort, string localIp = null);
-    }
+    
 }
